@@ -6,6 +6,7 @@ import random
 import time
 import streamlit as st
 
+
 model = load_model("model.h5")
 label = np.load("labels.npy")
 
