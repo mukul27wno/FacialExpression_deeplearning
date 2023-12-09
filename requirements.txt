@@ -3,3 +3,4 @@ numpy
 mediapipe
 keras
 streamlit
+tensorflow
