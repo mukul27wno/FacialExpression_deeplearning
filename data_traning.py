@@ -73,7 +73,7 @@ m = Dense(256, activation="relu")(m)
 m = Dense(256, activation="relu")(m)
 m = Dense(256, activation="relu")(m)
 
-checkpoint_cb = tf.keras.callbacks.ModelCheckpoint("model.h5", save_best_only=True, monitor='loss')
+checkpoint_cb = tf.keras.callbacks.ModelCheckpoint("model.tflite", save_best_only=True, monitor='loss')
 early_stopping_cb = tf.keras.callbacks.EarlyStopping(patience=10, restore_best_weights=True, monitor='loss')
 
 op = Dense(y.shape[1], activation="softmax")(m) 
@@ -85,5 +85,5 @@ model.compile(optimizer='rmsprop', loss="categorical_crossentropy", metrics=['ac
 model.fit(X, y, epochs=5000, callbacks=[checkpoint_cb, early_stopping_cb], verbose=1)
 
 
-model.save("modelsave.h5")
+model.save("modelsave.tflite")
 np.save("labels.npy", np.array(label))
