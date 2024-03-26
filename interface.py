@@ -7,6 +7,8 @@ import random
 import time
 import mediapipe as mp
 
+st.init_session_state()
+
 model = load_model("model.h5")
 label = np.load("labels.npy")
 
